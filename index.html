@@ -21,6 +21,52 @@
   <!-- ========== 样式表引用 ========== -->
   <!-- 【可修改】如果要自定义样式，可以修改 assets/css/main.css 文件 -->
   <link rel="stylesheet" href="assets/css/main.css" />
+<style>
+/* 禁用所有页面元素的选择和拖动 */
+* {
+    -webkit-user-select: none;  /* Chrome, Safari, Edge */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* IE/Edge */
+    user-select: none;          /* 标准语法 */
+    -webkit-user-drag: none;    /* Chrome, Safari, Edge */
+    -moz-user-drag: none;       /* Firefox */
+    user-drag: none;            /* 标准语法 */
+}
+
+/* 禁用图片拖动 */
+img {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-drag: none;
+    -moz-user-select: none;
+    user-drag: none;
+    user-select: none;
+    pointer-events: none;      /* 禁用图片的鼠标事件 */
+}
+
+/* 禁用链接的右键菜单（保留点击功能） */
+a {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* 禁用文本选择 */
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* 禁用文本和元素的拖动 */
+.nodrag {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    user-drag: none;
+}
+</style>
   <noscript>
    <link rel="stylesheet" href="assets/css/noscript.css" />
   </noscript>
