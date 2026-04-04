@@ -1,0 +1,23 @@
+name: Deploy to FTP
+
+on:
+  push:
+    branches: [ "main" ]  # 当推送到 main 分支时触发，可按需修改
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+      with:
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: ${{ secrets.FTP_TARGET_DIR }}
+        # 可选：排除不需要上传的文件或文件夹，如node_modules
+        exclude: |
+          **/.git*
+          **/.env
+          **/node_modules/**
